@@ -1,7 +1,6 @@
 // needed for async await
 // babel/polyfill deprecated
 
-import "semantic-ui-css/semantic.min.css";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 

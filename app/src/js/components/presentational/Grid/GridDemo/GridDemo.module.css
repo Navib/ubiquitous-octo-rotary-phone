@@ -1,0 +1,34 @@
+.gridItem:nth-child(1) {
+  background: #fff;
+}
+
+.gridItem:nth-child(2) {
+  background: #d6d665;
+}
+
+.gridItem:nth-child(3) {
+  background: #424242;
+  color: white;
+}
+
+.gridItem:nth-child(4) {
+  background: #74b4c4;
+}
+
+.gridItem:nth-child(5) {
+  background: #0567a8;
+}
+
+.gridItem:nth-child(6) {
+  background: #000;
+  color: white;
+}
+
+.gridItem:nth-child(7) {
+  background: #d6d665;
+}
+
+.gridItem:nth-child(8) {
+  background: #424242;
+  color: white;
+}
