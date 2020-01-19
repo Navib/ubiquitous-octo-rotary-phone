@@ -1,0 +1,9 @@
+.purpleFw {
+  background: purple;
+  width: 100%;
+
+  div:nth-child(1) {
+    background: green;
+    color: white;
+  }
+}
