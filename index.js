@@ -11,7 +11,9 @@ db.once("open", () => console.log("connected to database"));
 
 app.use(express.json());
 
-app.use(express.static("./app/dist/"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
 
 const subscribersRouter = require("./routes/subscribers");
 app.use("/subscribers", subscribersRouter);

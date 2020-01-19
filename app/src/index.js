@@ -7,14 +7,24 @@ import "regenerator-runtime/runtime";
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
-import store from "./js/store/index";
+import { Router, Switch, Route, Link } from "react-router-dom";
+import { ConnectedRouter } from "connected-react-router";
+import configureStore from "./js/store/configureStore";
+import { history } from "./js/store/history";
 import App from "./js/components/presentational/App";
 
 import "./index.scss";
 
+const store = configureStore(history);
 render(
   <Provider store={store}>
-    <App />
+    <ConnectedRouter history={history}>
+      <Router history={history}>
+        <Switch>
+          <Route path="/:filter?" component={App} />
+        </Switch>
+      </Router>
+    </ConnectedRouter>
   </Provider>,
   document.getElementById("root")
 );

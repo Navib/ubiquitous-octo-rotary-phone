@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const isDevelopment = process.env.NODE_ENV === "development";
 
 module.exports = {
+  devServer: { historyApiFallback: true },
   module: {
     rules: [
       {
