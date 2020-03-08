@@ -1,9 +1,5 @@
-.purpleFw {
-  background: purple;
+.background {
+  background: #0c0c0c;
   width: 100%;
-
-  div:nth-child(1) {
-    background: green;
-    color: white;
-  }
+  min-height: 100vh;
 }

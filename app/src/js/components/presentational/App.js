@@ -1,7 +1,8 @@
 import React from "react";
+import classnames from "classnames";
 import { Switch, Route, Link } from "react-router-dom";
+import HomePage from "../presentational/Pages/Home/Home";
 
-import styles from "./app.module.css";
 import sass from "./app.module.scss";
 
 // This site has 3 pages, all of which are rendered
@@ -16,7 +17,7 @@ import sass from "./app.module.scss";
 export default function App() {
   return (
     <React.Fragment>
-      <div>
+      <div className={classnames(sass.background, "ui container fluid app")}>
         <ul>
           <li>
             <Link to="/">Home</Link>
@@ -31,7 +32,7 @@ export default function App() {
 
         <Switch>
           <Route exact path="/">
-            <Home />
+            <HomePage />
           </Route>
           <Route path="/about">
             <About />
@@ -47,14 +48,6 @@ export default function App() {
 
 // You can think of these components as "pages"
 // in your app.
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-    </div>
-  );
-}
 
 function About() {
   return (
