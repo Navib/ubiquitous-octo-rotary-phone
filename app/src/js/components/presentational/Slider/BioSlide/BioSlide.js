@@ -36,7 +36,7 @@ const BioSlide = () => {
               </div>
             </div>
           </div>
-          <img src="https://via.placeholder.com/250" />
+          <img src="https://via.placeholder.com/225" />
         </div>
         <div class="content">
           <div class="header">Ivan Baena</div>
