@@ -1,42 +1,75 @@
 import React from "react";
+import PropTypes from "prop-types";
+import classnames from "classnames";
 
-const Slide = ({ text }) => {
+import styles from "./Slide.module.scss";
+
+const propTypes = {
+  text: PropTypes.string,
+  project: PropTypes.string,
+  focus: PropTypes.string,
+  summary: PropTypes.string,
+  results: PropTypes.string,
+  isProductionalized: PropTypes.bool
+};
+
+const Slide = ({
+  text,
+  project,
+  focus,
+  summary,
+  results,
+  isProductionalized
+}) => {
   return (
     <div className="ui card">
       <div className="content">
-        <div className="header">{text}</div>
+        <div className="header">{text || project}</div>
       </div>
       <div className="content">
-        <h4 className="ui sub header">Activity</h4>
+        <h4 className="ui sub header">{focus}</h4>
         <div className="ui small feed">
           <div className="event">
             <div className="content">
-              <div className="summary">
-                <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-              </div>
+              <div className="summary">{summary}</div>
+            </div>
+          </div>
+          <div className="event">
+            <div className="content">
+              <div className="summary">{results}</div>
             </div>
           </div>
           <div className="event">
             <div className="content">
               <div className="summary">
-                <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-              </div>
-            </div>
-          </div>
-          <div className="event">
-            <div className="content">
-              <div className="summary">
-                <a>Helen Troy</a> added two pictures
+                Code is live:
+                {isProductionalized ? (
+                  <i
+                    className={classnames(
+                      styles.green,
+                      "check circle outline icon",
+                      styles.icon
+                    )}
+                  ></i>
+                ) : (
+                  <i
+                    className={classnames(
+                      styles.red,
+                      "times circle outline icon",
+                      styles.icon
+                    )}
+                  ></i>
+                )}
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="extra content">
-        <button className="ui button">Join Project</button>
+        <button className="ui button full-width">Demo</button>
       </div>
     </div>
   );
 };
-
+Slide.propTypes = propTypes;
 export default Slide;

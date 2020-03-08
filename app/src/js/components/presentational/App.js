@@ -1,6 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import HomePage from "../presentational/Pages/Home/Home";
 
 import sass from "./app.module.scss";
@@ -18,18 +18,6 @@ export default function App() {
   return (
     <React.Fragment>
       <div className={classnames(sass.background, "ui container fluid app")}>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-        </ul>
-
         <Switch>
           <Route exact path="/">
             <HomePage />
