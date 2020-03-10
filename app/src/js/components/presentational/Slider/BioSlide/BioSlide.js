@@ -36,14 +36,14 @@ const BioSlide = () => {
               </div>
             </div>
           </div>
-          <img src="https://via.placeholder.com/225" />
+          <img src="public/svg/avatar.svg" />
         </div>
-        <div class="content">
-          <div class="header">Ivan Baena</div>
-          <div class="meta">
+        <div className="content">
+          <div className="header">Ivan Baena</div>
+          <div className="meta">
             <a>Front End Developer</a>
           </div>
-          <div class="description">
+          <div className="description">
             Ivan is an Front End Developer with a focus on React, Redux,
             Webpack, & Node. Ivan is currently living in the greater New York
             City area.

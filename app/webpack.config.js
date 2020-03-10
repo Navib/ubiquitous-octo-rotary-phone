@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
@@ -96,6 +97,18 @@ module.exports = {
       template: "./src/index.html",
       filename: "./index.html"
     }),
+    new CopyPlugin([
+      {
+        from: "./assets/svg",
+        to: "public/svg",
+        test: /([^/]+)\/(.+)\.svg/
+      },
+      {
+        from: "./assets/png",
+        to: "public/png",
+        test: /([^/]+)\/(.+)\.png$/
+      }
+    ]),
     new MiniCssExtractPlugin({
       filename: isDevelopment ? "[name].css" : "[name].[hash].css",
       chunkFilename: isDevelopment ? "[id].css" : "[id].[hash].css"

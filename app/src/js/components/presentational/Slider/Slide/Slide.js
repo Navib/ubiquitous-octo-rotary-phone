@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
+import DemoPortal from "../../Portal/DemoPortal/DemoPortal";
+import Media from "../../Media/Media";
 
 import styles from "./Slide.module.scss";
 
@@ -10,7 +12,8 @@ const propTypes = {
   focus: PropTypes.string,
   summary: PropTypes.string,
   results: PropTypes.string,
-  isProductionalized: PropTypes.bool
+  isProductionalized: PropTypes.bool,
+  media: PropTypes.any
 };
 
 const Slide = ({
@@ -19,8 +22,15 @@ const Slide = ({
   focus,
   summary,
   results,
-  isProductionalized
+  isProductionalized,
+  media
 }) => {
+  const [demoClicked, setClicked] = useState(false);
+
+  const toggleDemo = () => {
+    setClicked(!demoClicked);
+  };
+
   return (
     <div className="ui card">
       <div className="content">
@@ -66,7 +76,14 @@ const Slide = ({
         </div>
       </div>
       <div className="extra content">
-        <button className="ui button full-width">Demo</button>
+        <button className="ui button full-width" onClick={() => toggleDemo()}>
+          Demo
+        </button>
+        {demoClicked ? (
+          <DemoPortal>
+            <Media closePortal={toggleDemo} media={media} />
+          </DemoPortal>
+        ) : null}
       </div>
     </div>
   );
