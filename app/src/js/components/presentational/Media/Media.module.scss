@@ -1,0 +1,19 @@
+.centerScreen {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.exitButton {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  width: 52px !important;
+  padding: 1rem !important;
+  border-radius: 50% !important;
+  height: 52px !important;
+  margin: 0;
+  text-align: left;
+}

@@ -3,7 +3,14 @@ import React from "react";
 export const renderMultipleSlide = (Component, n, data) => {
   if (data) {
     return data.map((obj, indx) => {
-      const { project, focus, summary, results, isProductionalized } = obj;
+      const {
+        project,
+        focus,
+        summary,
+        results,
+        isProductionalized,
+        media
+      } = obj;
       return (
         <Component
           key={indx}
@@ -12,6 +19,7 @@ export const renderMultipleSlide = (Component, n, data) => {
           summary={summary}
           results={results}
           isProductionalized={isProductionalized}
+          media={media}
         />
       );
     });
